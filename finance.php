@@ -76,6 +76,48 @@ $history = $_SESSION['history'];
 <head>
 <meta charset="UTF-8">
 <title>Sistem Manajemen Keuangan Sederhana</title>
+<style>
+    :root {
+        color-scheme: light dark;
+        font-family: system-ui, sans-serif;
+    }
+
+    body {
+        max-width: 640px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+        line-height: 1.5;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-block: 1.5rem;
+        padding: 1rem;
+        border: 1px solid #8888;
+        border-radius: 8px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 0.4rem 0.6rem;
+        border-bottom: 1px solid #8884;
+    }
+
+    .errors {
+        color: #b91c1c;
+    }
+
+    .success {
+        color: #15803d;
+    }
+</style>
 </head>
 <body>
 <h1>Sistem Manajemen Keuangan Sederhana</h1>
