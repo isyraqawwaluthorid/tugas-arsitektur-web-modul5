@@ -106,5 +106,31 @@ $history = $_SESSION['history'];
 
     <button type="submit">Proses Transaksi</button>
 </form>
+
+<h2>Sisa Saldo: Rp<?= htmlspecialchars(number_format($balance, 2, ',', '.'), ENT_QUOTES, 'UTF-8') ?></h2>
+
+<h2>Riwayat Transaksi</h2>
+<?php if ($history === []): ?>
+    <p>Belum ada transaksi.</p>
+<?php else: ?>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Jenis</th>
+                <th>Jumlah</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($history as $item): ?>
+                <tr>
+                    <td><?= htmlspecialchars((string) $item['id'], ENT_QUOTES, 'UTF-8') ?></td>
+                    <td><?= htmlspecialchars($item['label'], ENT_QUOTES, 'UTF-8') ?></td>
+                    <td>Rp<?= htmlspecialchars(number_format($item['amount'], 2, ',', '.'), ENT_QUOTES, 'UTF-8') ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+<?php endif; ?>
 </body>
 </html>
